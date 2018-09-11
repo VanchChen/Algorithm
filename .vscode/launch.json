@@ -8,13 +8,16 @@
             "name": "c/c++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/compile/a.out",
+            "program": "${workspaceFolder}/.compile/a.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
+            "logging": {
+                "moduleLoad": false,
+            },
             "preLaunchTask":"c++"
         }
     ]

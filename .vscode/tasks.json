@@ -10,7 +10,9 @@
             "args": [
                 "${file}",
                 "-std=c++11",
-                "-g"
+                "-g",
+                "-o",
+                "${fileDirname}/.compile/a.out"
             ]
         }
     ]
