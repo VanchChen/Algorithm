@@ -28,6 +28,9 @@ class Solution {
         
         for (index, num) in nums.enumerated() {
             if let lastIndex = dict[target - num] {
+                if index > lastIndex {
+                    return [lastIndex, index]
+                }
                 return [index, lastIndex]
             }
             dict[num] = index
