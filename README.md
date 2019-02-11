@@ -1,3 +1,5 @@
 # Algorithm
 
-Algorithm For C++
+Algorithm Learning...
+
+Now is on LeetCode for swift.
