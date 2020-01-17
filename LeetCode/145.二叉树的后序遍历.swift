@@ -109,6 +109,46 @@ class Solution {
         
         return result
     }
+
+    func postorderRecursiveTraversal(_ root: TreeNode?) -> [Int] {
+        var result = [Int]()
+        
+        func recursiveNode(_ node: TreeNode?, _ array: inout [Int]) {
+            guard let node = node else {
+                return
+            }
+            
+            recursiveNode(node.left, &array)
+            recursiveNode(node.right, &array)
+            
+            array.append(node.val)
+        }
+        
+        recursiveNode(root, &result)
+        
+        return result
+    }
+    
+    func postorderStackTraversal(_ root: TreeNode?) -> [Int] {
+        guard let root = root else { return [] }
+        
+        var stack = [TreeNode]()
+        var result = [Int]()
+        stack.append(root)
+        
+        while !stack.isEmpty {
+            var node = stack.popLast()
+            while node != nil {
+                result.append(node!.val)
+                if node?.left != nil {
+                    stack.append(node!.left!)
+                }
+                node = node?.right
+            }
+        }
+        
+        return result.reversed()
+    }
 }
 // @lc code=end
 
